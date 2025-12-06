@@ -1,0 +1,347 @@
+# Furniture-
+Furniture 
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xfurniture - Современная мебель для вашего дома</title>
+
+    <style>
+        /* CSS стили, объединенные из style.css */
+        
+        /* Базовый сброс и шрифты */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Шапка (Header) */
+        header {
+            background-color: #007bff; /* Яркий синий */
+            color: white;
+            padding: 15px 0;
+            border-bottom: 5px solid #0056b3;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .cart-btn {
+            background-color: #ffc107; /* Желтый */
+            color: #333;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .cart-btn:hover {
+            background-color: #e0a800;
+        }
+
+        /* Секция "Герой" (Hero) */
+        .hero {
+            background-color: #ffffff;
+            padding: 60px 20px;
+            text-align: center;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero h2 {
+            font-size: 2.5em;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .primary-btn {
+            background-color: #28a745; /* Зеленый */
+            color: white;
+        }
+
+        .primary-btn:hover {
+            background-color: #1e7e34;
+        }
+
+        /* Каталог товаров */
+        .products {
+            padding: 40px 0;
+        }
+
+        .products h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #007bff;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-card h3 {
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .product-card .category {
+            color: #6c757d;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+
+        .product-card .price {
+            font-size: 1.4em;
+            color: #dc3545; /* Красный для цены */
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .product-card .btn {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .product-card .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Контактная информация */
+        .contact-info {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #ffffff;
+            border-top: 1px solid #ddd;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .contact-info h2 {
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+
+        .contact-info p {
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        /* Подвал (Footer) */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Xfurniture</h1>
+            <nav>
+                <ul>
+                    <li><a href="#catalog">Каталог</a></li>
+                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+            </nav>
+            <button class="cart-btn" onclick="openCart()">Корзина (0)</button>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section class="hero">
+            <h2>Создайте свой идеальный интерьер</h2>
+            <p>Откройте для себя стильную и качественную мебель по лучшим ценам.</p>
+            <a href="#catalog" class="btn primary-btn">Смотреть каталог</a>
+        </section>
+
+        <section id="catalog" class="products">
+            <h2>Наш каталог</h2>
+            <div class="product-grid">
+
+                <div class="product-card">
+                    [attachment_0](attachment)
+                    <h3>Шкаф "Гармония"</h3>
+                    <p class="category">Шкафы</p>
+                    <p class="price">45 000 ₽</p>
+                    <button class="btn" onclick="addToCart('Шкаф Гармония', 45000)">В корзину</button>
+                </div>
+
+                <div class="product-card">
+                    [attachment_1](attachment)
+                    <h3>Стол обеденный "Минимал"</h3>
+                    <p class="category">Столы</p>
+                    <p class="price">25 000 ₽</p>
+                    <button class="btn" onclick="addToCart('Стол Минимал', 25000)">В корзину</button>
+                </div>
+
+                <div class="product-card">
+                    [attachment_2](attachment)
+                    <h3>Диван угловой "Комфорт"</h3>
+                    <p class="category">Диваны</p>
+                    <p class="price">79 990 ₽</p>
+                    <button class="btn" onclick="addToCart('Диван Комфорт', 79990)">В корзину</button>
+                </div>
+                
+                <div class="product-card">
+                    [attachment_3](attachment)
+                    <h3>Кровать "Сканди"</h3>
+                    <p class="category">Кровати</p>
+                    <p class="price">35 500 ₽</p>
+                    <button class="btn" onclick="addToCart('Кровать Сканди', 35500)">В корзину</button>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact" class="contact-info">
+            <h2>Свяжитесь с нами</h2>
+            <p>Телефон продавца: **+7 755 026 706**</p>
+            <p>Email: info@xfurniture.kz</p>
+            <p>Мы работаем, чтобы ваш дом стал уютнее!</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Xfurniture. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript скрипты, объединенные из script.js
+        let cartItems = [];
+        let cartCount = 0;
+
+        /**
+         * Добавляет товар в корзину и обновляет счетчик.
+         * @param {string} name - Название товара.
+         * @param {number} price - Цена товара.
+         */
+        function addToCart(name, price) {
+            const item = { name, price };
+            cartItems.push(item);
+            cartCount++;
+            
+            // Обновляем текст на кнопке "Корзина"
+            const cartButton = document.querySelector('.cart-btn');
+            if (cartButton) {
+                cartButton.textContent = `Корзина (${cartCount})`;
+            }
+
+            alert(`Товар "${name}" добавлен в корзину! Цена: ${price} ₽`);
+            
+            console.log("Текущее содержимое корзины:", cartItems);
+        }
+
+        /**
+         * Открывает (имитирует открытие) корзины.
+         */
+        function openCart() {
+            if (cartCount === 0) {
+                alert("Ваша корзина пуста.");
+                return;
+            }
+
+            let total = 0;
+            let cartList = "Ваша корзина:\n\n";
+
+            cartItems.forEach(item => {
+                cartList += `${item.name} - ${item.price} ₽\n`;
+                total += item.price;
+            });
+
+            cartList += `\nОбщая сумма: ${total} ₽`;
+            
+            alert(cartList);
+        }
+
+        // Инициализация счетчика при загрузке страницы
+        document.addEventListener('DOMContentLoaded', () => {
+            const cartButton = document.querySelector('.cart-btn');
+            if (cartButton) {
+                cartButton.textContent = `Корзина (${cartCount})`;
+            }
+        });
+    </script>
+</body>
+</html>
